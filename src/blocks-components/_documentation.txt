@@ -1,0 +1,10 @@
+Blocks have children blocks elements. 
+
+Blocks pass to its children component following data:
+	parent
+	attr
+	item_n - if child is an array of components
+		indicating the position of the element in the Array
+		each item in the array should have id for react array displaying and updating
+
+

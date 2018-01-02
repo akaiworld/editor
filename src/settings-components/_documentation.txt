@@ -1,0 +1,39 @@
+Is the settings panel components receive:
+	map - map of the editable attrs
+	current - ref to the current(selected) react component instance
+	item_n - if attr is array of attrs
+		indicating the position of the element in the Array
+		each item in the array should have id for react array displaying and updating
+		
+SettingComponent is created for eached mapped attr of the page editable element.
+
+Store looks like:
+	editable_element: {
+		on: true, // display or hide
+		attr1: 'value-1',
+		attr2: 'value-2',
+		child_editable_element: { // editable element, located in current.children[ attr ]
+			on: true, // display or hide
+			attr1: 'value-1',
+			attr2: 'value-2',
+		},
+		child_list_of_editable_elements: [
+			{ // editable element, located in current.children[ attr ][ item_n ]
+				on: true, // display or hide
+				id: 0, // for react display
+				attr1: 'value-1',
+				attr2: 'value-2',
+				...
+			},
+			{ // editable element
+				on: true, // display or hide
+				id: 0, // for react display
+				attr1: 'value-1',
+				attr2: 'value-2',
+				...
+			},
+		],
+	}
+
+SettingComponent can receive an attr which corresponds ONLY to an actual value.
+But the value might be in an array. Then item_n is passed to locate the actual value.
